@@ -4,6 +4,7 @@
 
 **Live Demo:** [travel-guardian.butterbase.dev](https://travel-guardian.butterbase.dev)
 **Demo Video:** [Loom](https://www.loom.com/share/421ad34990c04b92abd8d8ddf9aa3e24)
+**Pitch Deck:** [View Slides](https://htmlpreview.github.io/?https://github.com/abhijitbetigeri/travel-guardian/blob/main/deck.html)
 **Track:** Video Intelligence & World Models
 **Hackathon:** Beta Hacks x Antler (June 2026)
 
