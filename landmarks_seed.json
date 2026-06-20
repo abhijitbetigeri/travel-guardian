@@ -1,0 +1,512 @@
+[
+  {
+    "id": 115971,
+    "category_name": "Category:Utah_Museum_of_Fine_Arts",
+    "name": "Marcia & John Price Museum",
+    "lat": 40.7602,
+    "lon": -111.843,
+    "city": "Salt Lake City",
+    "state": "Utah",
+    "country": "United States"
+  },
+  {
+    "id": 116377,
+    "category_name": "Category:Head_of_the_Charles",
+    "name": "Dr. Paul Dudley White Path",
+    "lat": 42.3625,
+    "lon": -71.11694444,
+    "city": "Boston",
+    "state": "Massachusetts",
+    "country": "United States"
+  },
+  {
+    "id": 122979,
+    "category_name": "Category:Ruben_M._Benjamin_House",
+    "name": "East Grove Street District",
+    "lat": 40.478056,
+    "lon": -88.986389,
+    "city": "Bloomington",
+    "state": "Illinois",
+    "country": "United States"
+  },
+  {
+    "id": 125760,
+    "category_name": "Category:Faneuil_Hall",
+    "name": "Project Management Academy",
+    "lat": 42.359987,
+    "lon": -71.056315,
+    "city": "Boston",
+    "state": "Massachusetts",
+    "country": "United States"
+  },
+  {
+    "id": 128086,
+    "category_name": "Category:BNY_Mellon_Center_(Philadelphia)",
+    "name": "The Shops at Liberty Place",
+    "lat": 39.9525,
+    "lon": -75.16777778,
+    "city": "Philadelphia",
+    "state": "Pennsylvania",
+    "country": "United States"
+  },
+  {
+    "id": 128339,
+    "category_name": "Category:Mary_McLeod_Bethune_Home",
+    "name": "Bethune-Cookman University",
+    "lat": 29.212386,
+    "lon": -81.032097,
+    "city": "Daytona Beach",
+    "state": "Florida",
+    "country": "United States"
+  },
+  {
+    "id": 131948,
+    "category_name": "Category:Barber_Vintage_Motorsports_Museum",
+    "name": "Barber Motorsports Parkway",
+    "lat": 33.5336839,
+    "lon": -86.61449,
+    "city": "Birmingham",
+    "state": "Alabama",
+    "country": "United States"
+  },
+  {
+    "id": 132634,
+    "category_name": "Category:Samuel_S._Lewis_State_Park",
+    "name": "Samuel S. Lewis State Park",
+    "lat": 39.9964,
+    "lon": -76.5492,
+    "city": "Lower Windsor Township",
+    "state": "Pennsylvania",
+    "country": "United States"
+  },
+  {
+    "id": 59193,
+    "category_name": "Category:Basilique_de_la_Visitation",
+    "name": "Basilique de la Visitation",
+    "lat": 45.892532,
+    "lon": 6.127874,
+    "city": "Annecy",
+    "state": "Auvergne-Rh\u00f4ne-Alpes",
+    "country": "France"
+  },
+  {
+    "id": 64672,
+    "category_name": "Category:Basilique_Saint_Jean_Baptiste_de_Chaumont",
+    "name": "Union d\u00e9partementale - CGT",
+    "lat": 48.1125,
+    "lon": 5.13833333,
+    "city": "Chaumont",
+    "state": "Grand Est",
+    "country": "France"
+  },
+  {
+    "id": 73168,
+    "category_name": "Category:Pica_d'Estats",
+    "name": "Cresta de la Pica d'Estats",
+    "lat": 42.66693718,
+    "lon": 1.39790066,
+    "city": "Auzat",
+    "state": "Occitania",
+    "country": "France"
+  },
+  {
+    "id": 79292,
+    "category_name": "Category:\u00c9glise_Saint-Louis-d'Antin",
+    "name": "\u00c9glise Saint-Louis-d'Antin",
+    "lat": 48.8745,
+    "lon": 2.3283,
+    "city": "Paris",
+    "state": "Ile-de-France",
+    "country": "France"
+  },
+  {
+    "id": 80245,
+    "category_name": "Category:Hippodrome_d'Enghien-Soisy",
+    "name": "Hippodrome d'Enghien-Soisy",
+    "lat": 48.9803,
+    "lon": 2.29197,
+    "city": "Soisy-sous-Montmorency",
+    "state": "Ile-de-France",
+    "country": "France"
+  },
+  {
+    "id": 89594,
+    "category_name": "Category:Plaine_des_Sables",
+    "name": "Route Foresti\u00e8re du Volcan",
+    "lat": -21.23333333,
+    "lon": 55.65833333,
+    "city": "Sainte-Rose",
+    "state": "R\u00e9union",
+    "country": "France"
+  },
+  {
+    "id": 129965,
+    "category_name": "Category:San_Giorgio_dei_Greci_(Venice)",
+    "name": "Chiesa di San Giorgio dei Greci",
+    "lat": 45.4354,
+    "lon": 12.3448,
+    "city": "Venice",
+    "state": "Veneto",
+    "country": "Italy"
+  },
+  {
+    "id": 133417,
+    "category_name": "Category:Sant'Antonio_a_Tarsia_(Naples)",
+    "name": "Chiesa di Sant'Antonio a Tarsia",
+    "lat": 40.84893,
+    "lon": 14.24612,
+    "city": "Naples",
+    "state": "Campania",
+    "country": "Italy"
+  },
+  {
+    "id": 134185,
+    "category_name": "Category:San_Giovanni_Battista_(Livorno)",
+    "name": "Chiesa di San Giovanni Battista",
+    "lat": 43.552016,
+    "lon": 10.306774,
+    "city": "Livorno",
+    "state": "Tuscany",
+    "country": "Italy"
+  },
+  {
+    "id": 134660,
+    "category_name": "Category:Bocca_Serriola",
+    "name": "Strada Regionale 257 Apecchiese",
+    "lat": 43.51583333,
+    "lon": 12.35638889,
+    "city": "Citt\u00e0 di Castello",
+    "state": "Umbria",
+    "country": "Italy"
+  },
+  {
+    "id": 137100,
+    "category_name": "Category:Santa_Maria_Apparente",
+    "name": "Chiesa di Santa Maria Apparente",
+    "lat": 40.83995,
+    "lon": 14.238436,
+    "city": "Naples",
+    "state": "Campania",
+    "country": "Italy"
+  },
+  {
+    "id": 137596,
+    "category_name": "Category:Santi_Pietro_e_Paolo_(Roccalbegna)",
+    "name": "Chiesa dei Santi Pietro e Paolo",
+    "lat": 42.78587,
+    "lon": 11.507792,
+    "city": "Roccalbegna",
+    "state": "Tuscany",
+    "country": "Italy"
+  },
+  {
+    "id": 127803,
+    "category_name": "Category:East_Riddlesden_Hall",
+    "name": "East Riddlesden Hall",
+    "lat": 53.87471,
+    "lon": -1.88118,
+    "city": "Bradford",
+    "state": "England",
+    "country": "United Kingdom"
+  },
+  {
+    "id": 128910,
+    "category_name": "Category:St_Peter_Hungate,_Norwich",
+    "name": "Hungate Medieval Art",
+    "lat": 52.6311,
+    "lon": 1.29691,
+    "city": "Norwich",
+    "state": "England",
+    "country": "United Kingdom"
+  },
+  {
+    "id": 128971,
+    "category_name": "Category:St_Michael's_Church,_Eriskay",
+    "name": "St. Michael's Church",
+    "lat": 57.086886,
+    "lon": -7.3067476,
+    "city": "Rhuban",
+    "state": "Scotland",
+    "country": "United Kingdom"
+  },
+  {
+    "id": 130471,
+    "category_name": "Category:Christchurch_Mansion",
+    "name": "Christchurch Mansion",
+    "lat": 52.0606,
+    "lon": 1.1582,
+    "city": "Ipswich",
+    "state": "England",
+    "country": "United Kingdom"
+  },
+  {
+    "id": 131362,
+    "category_name": "Category:Acton_Burnell_Castle",
+    "name": "Acton Burnell Castle",
+    "lat": 52.6129,
+    "lon": -2.68966,
+    "city": "Pitchford",
+    "state": "England",
+    "country": "United Kingdom"
+  },
+  {
+    "id": 66165,
+    "category_name": "Category:Matsumoto_City_Museum",
+    "name": "Matsumoto City Museum",
+    "lat": 36.237578,
+    "lon": 137.970614,
+    "city": "Matsumoto",
+    "state": "Nagano Prefecture",
+    "country": "Japan"
+  },
+  {
+    "id": 75934,
+    "category_name": "Category:Higashifushimi_Ice_Arena",
+    "name": "DyDo Drinco Ice Arena",
+    "lat": 35.728056,
+    "lon": 139.565278,
+    "city": "Nerima",
+    "state": "",
+    "country": "Japan"
+  },
+  {
+    "id": 92833,
+    "category_name": "Category:Kyu_Yasuda_teien",
+    "name": "Former Yasuda Gardens",
+    "lat": 35.698361,
+    "lon": 139.793694,
+    "city": "Sumida",
+    "state": "",
+    "country": "Japan"
+  },
+  {
+    "id": 102712,
+    "category_name": "Category:Fushimi_Inari-taisha",
+    "name": "Outer Hall of Worship",
+    "lat": 34.967222,
+    "lon": 135.772778,
+    "city": "Kyoto",
+    "state": "Kyoto Prefecture",
+    "country": "Japan"
+  },
+  {
+    "id": 105930,
+    "category_name": "Category:Ch\u014dju-ji_(Konan,_Shiga)",
+    "name": "tyouzyoji-hondou line",
+    "lat": 34.985325,
+    "lon": 136.05989444,
+    "city": "Konan",
+    "state": "Shiga Prefecture",
+    "country": "Japan"
+  },
+  {
+    "id": 819,
+    "category_name": "Category:Church_of_San_Fernando_de_Torrero,_Zaragoza",
+    "name": "Acuartelamiento San Fernando",
+    "lat": 41.634575,
+    "lon": -0.88290278,
+    "city": "Zaragoza",
+    "state": "Aragon",
+    "country": "Spain"
+  },
+  {
+    "id": 58767,
+    "category_name": "Category:Caminito_del_Rey",
+    "name": "Puente Diputado Ignacio Mena",
+    "lat": 36.915833,
+    "lon": -4.772778,
+    "city": "Ardales",
+    "state": "Andalusia",
+    "country": "Spain"
+  },
+  {
+    "id": 98787,
+    "category_name": "Category:Church_of_San_Juan_Bautista,_\u00c1greda",
+    "name": "Iglesia de San Juan Bautista",
+    "lat": 41.8549543,
+    "lon": -1.9217005,
+    "city": "\u00c1greda",
+    "state": "Castile and Le\u00f3n",
+    "country": "Spain"
+  },
+  {
+    "id": 110932,
+    "category_name": "Category:Colegiate_of_the_Santo_Sepulcro,_Calatayud",
+    "name": "Colegiata del Santo Sepulcro",
+    "lat": 41.35498889,
+    "lon": -1.64084722,
+    "city": "Calatayud",
+    "state": "Aragon",
+    "country": "Spain"
+  },
+  {
+    "id": 59937,
+    "category_name": "Category:Bismarckturm_(T\u00fcbingen)",
+    "name": "Bismarckturm T\u00fcbingen",
+    "lat": 48.5137,
+    "lon": 9.03428,
+    "city": "T\u00fcbingen",
+    "state": "Baden-W\u00fcrttemberg",
+    "country": "Germany"
+  },
+  {
+    "id": 61867,
+    "category_name": "Category:Burg_Arloff",
+    "name": "M\u00fcnstereifeler Stra\u00dfe",
+    "lat": 50.5925,
+    "lon": 6.78714,
+    "city": "Bad M\u00fcnstereifel",
+    "state": "North Rhine-Westphalia",
+    "country": "Germany"
+  },
+  {
+    "id": 62041,
+    "category_name": "Category:Museum_f\u00fcr_Angewandte_Kunst_(K\u00f6ln)",
+    "name": "Museum of Applied Art",
+    "lat": 50.9397634,
+    "lon": 6.9548423,
+    "city": "Cologne",
+    "state": "North Rhine-Westphalia",
+    "country": "Germany"
+  },
+  {
+    "id": 63119,
+    "category_name": "Category:Museumsdorf_D\u00fcppel",
+    "name": "Museum Village D\u00fcppel",
+    "lat": 52.4245,
+    "lon": 13.2334,
+    "city": "Berlin",
+    "state": "",
+    "country": "Germany"
+  },
+  {
+    "id": 51692,
+    "category_name": "Category:Laxmi_Vilas_Palace",
+    "name": "Laxmi Vilas Rao Palace",
+    "lat": 22.2939,
+    "lon": 73.1914,
+    "city": "Vadodara",
+    "state": "Gujarat",
+    "country": "India"
+  },
+  {
+    "id": 98724,
+    "category_name": "Category:Mausoleum_of_Sher_Shah_Suri",
+    "name": "Tomb of Sher Shah Suri",
+    "lat": 24.94805556,
+    "lon": 84.00916667,
+    "city": "Sasaram",
+    "state": "Bihar",
+    "country": "India"
+  },
+  {
+    "id": 105829,
+    "category_name": "Category:Trivandrum_Zoo",
+    "name": "Thiruvananthapuram Zoo",
+    "lat": 8.51173,
+    "lon": 76.955,
+    "city": "Thiruvananthapuram",
+    "state": "Kerala",
+    "country": "India"
+  },
+  {
+    "id": 114379,
+    "category_name": "Category:Sai_Wan_Shan",
+    "name": "MacLehose Trail Section 2",
+    "lat": 22.387242,
+    "lon": 114.377639,
+    "city": "Sai Kung District",
+    "state": "Hong Kong",
+    "country": "China"
+  },
+  {
+    "id": 123476,
+    "category_name": "Category:Pok_Fu_Lam_Reservoir",
+    "name": "Pok Fu Lam Reservoir Road",
+    "lat": 22.265,
+    "lon": 114.137,
+    "city": "Hong Kong Island",
+    "state": "Hong Kong",
+    "country": "China"
+  },
+  {
+    "id": 125555,
+    "category_name": "Category:Luk_Keng_Tsuen",
+    "name": "Yam O Luk Keng Aqua Privy",
+    "lat": 22.332,
+    "lon": 114.023,
+    "city": "Tsuen Wan District",
+    "state": "Hong Kong",
+    "country": "China"
+  },
+  {
+    "id": 99221,
+    "category_name": "Category:Park_Beach",
+    "name": "Marcia Street Takeaway",
+    "lat": -30.2897,
+    "lon": 153.119,
+    "city": "Coffs Harbour",
+    "state": "New South Wales",
+    "country": "Australia"
+  },
+  {
+    "id": 109992,
+    "category_name": "Category:Split_Point_Lighthouse",
+    "name": "Split Point Lighthouse",
+    "lat": -38.468,
+    "lon": 144.1045,
+    "city": "Aireys Inlet",
+    "state": "Victoria",
+    "country": "Australia"
+  },
+  {
+    "id": 114972,
+    "category_name": "Category:Blue_Lake,_South_Australia",
+    "name": "Blue Lake Apex Lookout",
+    "lat": -37.84666667,
+    "lon": 140.77805556,
+    "city": "Mount Gambier",
+    "state": "South Australia",
+    "country": "Australia"
+  },
+  {
+    "id": 116833,
+    "category_name": "Category:Museu_do_Comando_Militar_do_Sul",
+    "name": "Museu do Comando Militar do Sul",
+    "lat": -30.03148,
+    "lon": -51.23556,
+    "city": "Porto Alegre",
+    "state": "Rio Grande do Sul",
+    "country": "Brazil"
+  },
+  {
+    "id": 124793,
+    "category_name": "Category:Forte_de_Santo_In\u00e1cio_de_Tamandar\u00e9",
+    "name": "Forte de Santo In\u00e1cio de Loyola",
+    "lat": -8.757604,
+    "lon": -35.09962,
+    "city": "Tamandar\u00e9",
+    "state": "Pernambuco",
+    "country": "Brazil"
+  },
+  {
+    "id": 182797,
+    "category_name": "Category:National_Museum_of_Anthropology",
+    "name": "Museo Nacional de Antropolog\u00eda",
+    "lat": 19.42611111,
+    "lon": -99.18611111,
+    "city": "Mexico City",
+    "state": "",
+    "country": "Mexico"
+  },
+  {
+    "id": 8454,
+    "category_name": "Category:Parque_David_Ben_Guri\u00f3n",
+    "name": "Homenaje a la Mujer del Mundo",
+    "lat": 20.0942,
+    "lon": -98.7731,
+    "city": "Pachuca",
+    "state": "Hidalgo",
+    "country": "Mexico"
+  }
+]

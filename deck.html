@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TravelGuardian — Pitch Deck</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0f0f1a;
+    color: #fff;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .deck { position: relative; width: 100vw; height: 100vh; }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 6rem;
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.5s, transform 0.5s;
+    pointer-events: none;
+  }
+
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .slide.prev {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  /* Slide counter */
+  .counter {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 2rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.3);
+    font-weight: 500;
+    z-index: 100;
+  }
+
+  .nav-hint {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 2rem;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.2);
+    z-index: 100;
+  }
+
+  /* ---- Slide Styles ---- */
+
+  /* Title Slide */
+  .slide-title {
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1040 50%, #0f0f1a 100%);
+    text-align: center;
+  }
+
+  .slide-title .logo { font-size: 4rem; margin-bottom: 1rem; }
+
+  .slide-title h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .slide-title .subtitle {
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .slide-title .track-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #a5b4fc;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .slide-title .team {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.95rem;
+  }
+
+  /* Problem Slide */
+  .slide-problem {
+    background: linear-gradient(135deg, #1a0a0a 0%, #0f0f1a 100%);
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .slide-problem .tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #f87171;
+    margin-bottom: 1rem;
+  }
+
+  .slide-problem h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    max-width: 800px;
+  }
+
+  .pain-points {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 700px;
+  }
+
+  .pain-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+  }
+
+  .pain-point .icon { font-size: 1.5rem; flex-shrink: 0; }
+
+  /* Solution Slide */
+  .slide-solution {
+    background: linear-gradient(135deg, #0a1a0a 0%, #0f0f1a 100%);
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .slide-solution .tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #4ade80;
+    margin-bottom: 1rem;
+  }
+
+  .slide-solution h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .feature-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 1.75rem;
+    transition: transform 0.2s;
+  }
+
+  .feature-card:hover { transform: translateY(-4px); }
+
+  .feature-card .feat-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+
+  .feature-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+  }
+
+  /* How It Works */
+  .slide-how {
+    background: linear-gradient(135deg, #0f0f1a 0%, #0a0a2a 100%);
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .slide-how .tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #818cf8;
+    margin-bottom: 1rem;
+  }
+
+  .slide-how h2 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+  }
+
+  .flow-steps {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1100px;
+    align-items: stretch;
+  }
+
+  .flow-step {
+    flex: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    text-align: center;
+  }
+
+  .flow-step .step-num {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #6366f1;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .flow-step .step-icon { font-size: 2rem; margin: 0.75rem 0; }
+  .flow-step h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .flow-step p { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.4; }
+
+  .flow-arrow {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.2);
+    flex-shrink: 0;
+  }
+
+  /* Tech Stack */
+  .slide-stack {
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1030 100%);
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .slide-stack .tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #c084fc;
+    margin-bottom: 1rem;
+  }
+
+  .slide-stack h2 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .stack-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .stack-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .stack-item .stack-icon { font-size: 1.75rem; flex-shrink: 0; }
+  .stack-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.15rem; }
+  .stack-item p { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+  .butterbase-highlight {
+    margin-top: 1.5rem;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .butterbase-highlight h4 {
+    font-size: 1rem;
+    color: #a5b4fc;
+    margin-bottom: 0.5rem;
+  }
+
+  .bb-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .bb-feat {
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    background: rgba(99, 102, 241, 0.15);
+    color: #c7d2fe;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  /* Memory Slide */
+  .slide-memory {
+    background: linear-gradient(135deg, #0f1a1a 0%, #0f0f1a 100%);
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .slide-memory .tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #2dd4bf;
+    margin-bottom: 1rem;
+  }
+
+  .slide-memory h2 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .memory-layers {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .memory-layer {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.1rem 1.5rem;
+  }
+
+  .memory-layer .ml-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .memory-layer h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.1rem; }
+  .memory-layer p { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+  /* Demo Slide */
+  .slide-demo {
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1040 50%, #0f0f1a 100%);
+    text-align: center;
+  }
+
+  .slide-demo h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .slide-demo .demo-url {
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 2rem;
+  }
+
+  .slide-demo .demo-url a {
+    color: #a5b4fc;
+    text-decoration: none;
+  }
+
+  .demo-points {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .demo-point {
+    text-align: center;
+  }
+
+  .demo-point .dp-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .demo-point h4 { font-size: 1rem; font-weight: 600; }
+  .demo-point p { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 0.25rem; }
+
+  /* CTA / Closing */
+  .slide-cta {
+    background: linear-gradient(135deg, #1a1040 0%, #0f0f1a 50%, #1a1040 100%);
+    text-align: center;
+  }
+
+  .slide-cta .logo { font-size: 4rem; margin-bottom: 1.5rem; }
+
+  .slide-cta h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .slide-cta .tagline {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+  }
+
+  .cta-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-stat { text-align: center; }
+  .cta-stat .num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #a5b4fc;
+  }
+  .cta-stat .label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.25rem;
+  }
+
+  .slide-cta .team-info {
+    color: rgba(255,255,255,0.3);
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- Slide 1: Title -->
+  <div class="slide slide-title active" data-index="0">
+    <div class="logo">🛡️</div>
+    <h1>TravelGuardian</h1>
+    <p class="subtitle">AI-Powered Travel Intelligence & Safety</p>
+    <div class="track-badge">Video Intelligence & World Models</div>
+    <p class="team">Beta Hacks x Antler Hackathon 2026</p>
+  </div>
+
+  <!-- Slide 2: Problem -->
+  <div class="slide slide-problem" data-index="1">
+    <div class="tag">The Problem</div>
+    <h2>Travelers explore blind.</h2>
+    <div class="pain-points">
+      <div class="pain-point">
+        <span class="icon">😰</span>
+        <span><strong>No context</strong> — you're standing in front of a landmark but don't know its significance, history, or what's nearby</span>
+      </div>
+      <div class="pain-point">
+        <span class="icon">🔄</span>
+        <span><strong>No memory</strong> — every trip starts from zero. Apps don't remember your preferences, past visits, or what you liked</span>
+      </div>
+      <div class="pain-point">
+        <span class="icon">📵</span>
+        <span><strong>No safety link</strong> — family and friends have no idea where you are or if you're safe while traveling</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: Solution -->
+  <div class="slide slide-solution" data-index="2">
+    <div class="tag">The Solution</div>
+    <h2>Your AI travel companion that sees, remembers, and protects.</h2>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feat-icon">📸</div>
+        <h3>Snap & Understand</h3>
+        <p>Point at any landmark. AI identifies the place, explains its significance, and surfaces safety tips and nearby attractions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🧠</div>
+        <h3>Smart Context</h3>
+        <p>Chat with an AI that remembers your preferences, past visits, and conversations. Gets smarter with every trip.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🛡️</div>
+        <h3>Guardian Ping</h3>
+        <p>Real-time safety check-ins sent to a guardian's dashboard. AI-generated location summaries via WebSockets.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 4: How it Works -->
+  <div class="slide slide-how" data-index="3">
+    <div class="tag">How It Works</div>
+    <h2>Four-step flow</h2>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="step-num">1</div>
+        <div class="step-icon">🏛️</div>
+        <h4>Browse</h4>
+        <p>Pick a landmark from the gallery or search by city/country</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-num">2</div>
+        <div class="step-icon">🤖</div>
+        <h4>Analyze</h4>
+        <p>AI vision model identifies the scene, history, and safety info</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-num">3</div>
+        <div class="step-icon">💬</div>
+        <h4>Chat & Plan</h4>
+        <p>Ask follow-ups, build a day plan, get restaurant suggestions</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-num">4</div>
+        <div class="step-icon">🛡️</div>
+        <h4>Check-in</h4>
+        <p>Send safety pings to guardian dashboard in real-time</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 5: Tech Stack & Butterbase -->
+  <div class="slide slide-stack" data-index="4">
+    <div class="tag">Tech Stack</div>
+    <h2>Built on Butterbase</h2>
+    <div class="stack-grid">
+      <div class="stack-item">
+        <span class="stack-icon">🧠</span>
+        <div>
+          <h4>AI Gateway</h4>
+          <p>Gemini 2.5 Flash via Butterbase AI — zero infra vision model</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <span class="stack-icon">🗃️</span>
+        <div>
+          <h4>Database</h4>
+          <p>7 tables — landmarks, plans, visits, check-ins, conversations</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <span class="stack-icon">⚡</span>
+        <div>
+          <h4>KV Store</h4>
+          <p>Analysis cache, visit counters, conversation memory</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <span class="stack-icon">🔌</span>
+        <div>
+          <h4>Realtime WebSockets</h4>
+          <p>Live guardian dashboard with instant safety alerts</p>
+        </div>
+      </div>
+    </div>
+    <div class="butterbase-highlight">
+      <h4>Butterbase Features Used</h4>
+      <div class="bb-features">
+        <span class="bb-feat">Database</span>
+        <span class="bb-feat">AI Gateway</span>
+        <span class="bb-feat">KV Store</span>
+        <span class="bb-feat">Realtime</span>
+        <span class="bb-feat">Auth</span>
+        <span class="bb-feat">Storage</span>
+        <span class="bb-feat">Frontend Deploy</span>
+        <span class="bb-feat">MCP</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 6: Persistent Memory -->
+  <div class="slide slide-memory" data-index="5">
+    <div class="tag">What Makes It Smart</div>
+    <h2>3 layers of persistent memory</h2>
+    <div class="memory-layers">
+      <div class="memory-layer">
+        <span class="ml-icon">⚡</span>
+        <div>
+          <h4>Analysis Cache (KV Store)</h4>
+          <p>AI scene analysis is cached per landmark — instant on revisit, saves API calls and cost</p>
+        </div>
+      </div>
+      <div class="memory-layer">
+        <span class="ml-icon">🎯</span>
+        <div>
+          <h4>Preference Learning (KV + DB)</h4>
+          <p>AI extracts preferences from chat (cuisine, safety, interests) and tailors future recommendations</p>
+        </div>
+      </div>
+      <div class="memory-layer">
+        <span class="ml-icon">💬</span>
+        <div>
+          <h4>Conversation Memory (KV Store)</h4>
+          <p>Chat context persists per landmark — resume conversations across sessions with full history</p>
+        </div>
+      </div>
+      <div class="memory-layer">
+        <span class="ml-icon">📋</span>
+        <div>
+          <h4>Travel Plans & Visit Tracking (DB)</h4>
+          <p>Daily itineraries, visit counts, photo storage — your full travel journal persisted</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 7: Live Demo -->
+  <div class="slide slide-demo" data-index="6">
+    <h2>Live Demo</h2>
+    <p class="demo-url"><a href="https://travel-guardian.butterbase.dev" target="_blank">travel-guardian.butterbase.dev</a></p>
+    <div class="demo-points">
+      <div class="demo-point">
+        <div class="dp-icon">🏛️</div>
+        <h4>71 landmarks</h4>
+        <p>12 countries</p>
+      </div>
+      <div class="demo-point">
+        <div class="dp-icon">🤖</div>
+        <h4>AI Vision</h4>
+        <p>Scene understanding</p>
+      </div>
+      <div class="demo-point">
+        <div class="dp-icon">🧠</div>
+        <h4>Persistent Memory</h4>
+        <p>Learns preferences</p>
+      </div>
+      <div class="demo-point">
+        <div class="dp-icon">🛡️</div>
+        <h4>Guardian Ping</h4>
+        <p>Real-time safety</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 8: Closing -->
+  <div class="slide slide-cta" data-index="7">
+    <div class="logo">🛡️</div>
+    <h2>TravelGuardian</h2>
+    <p class="tagline">AI that sees where you are, remembers where you've been, and keeps your loved ones informed.</p>
+    <div class="cta-stats">
+      <div class="cta-stat">
+        <div class="num">8</div>
+        <div class="label">Butterbase features</div>
+      </div>
+      <div class="cta-stat">
+        <div class="num">3</div>
+        <div class="label">Memory layers</div>
+      </div>
+      <div class="cta-stat">
+        <div class="num">71</div>
+        <div class="label">Landmarks</div>
+      </div>
+      <div class="cta-stat">
+        <div class="num">12</div>
+        <div class="label">Countries</div>
+      </div>
+    </div>
+    <p class="team-info">Beta Hacks x Antler Hackathon 2026</p>
+  </div>
+
+</div>
+
+<div class="counter" id="counter">1 / 8</div>
+<div class="nav-hint">← → arrow keys to navigate</div>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('counter');
+  const total = slides.length;
+
+  function goTo(n) {
+    if (n < 0 || n >= total) return;
+    slides[current].classList.remove('active');
+    slides[current].classList.add(n > current ? 'prev' : '');
+    current = n;
+    slides.forEach((s, i) => {
+      s.classList.remove('active', 'prev');
+      if (i === current) s.classList.add('active');
+      else if (i < current) s.classList.add('prev');
+    });
+    counter.textContent = `${current + 1} / ${total}`;
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goTo(current + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+    if (e.key === 'Home') goTo(0);
+    if (e.key === 'End') goTo(total - 1);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.clientX > window.innerWidth / 2) goTo(current + 1);
+    else goTo(current - 1);
+  });
+</script>
+
+</body>
+</html>
