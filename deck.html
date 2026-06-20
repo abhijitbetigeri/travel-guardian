@@ -347,6 +347,93 @@
     font-weight: 500;
   }
 
+  /* Architecture Slide */
+  .slide-arch {
+    background: linear-gradient(135deg, #0a0f1a 0%, #0f0f1a 100%);
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .slide-arch .tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #f59e0b;
+    margin-bottom: 1rem;
+  }
+
+  .slide-arch h2 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+  }
+
+  .arch-diagram {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .arch-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .arch-col-header {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    margin-bottom: 0.25rem;
+  }
+
+  .arch-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 0.7rem 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .arch-box .ab-icon { font-size: 1.1rem; flex-shrink: 0; }
+  .arch-box strong { font-weight: 700; }
+  .arch-box span { color: rgba(255,255,255,0.5); font-size: 0.72rem; }
+
+  .arch-box.highlight {
+    border-color: rgba(99,102,241,0.4);
+    background: rgba(99,102,241,0.08);
+  }
+
+  .arch-connector {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.15);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    width: 40px;
+  }
+
+  .arch-connector .conn-label {
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.25);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
   /* Memory Slide */
   .slide-memory {
     background: linear-gradient(135deg, #0f1a1a 0%, #0f0f1a 100%);
@@ -620,8 +707,53 @@
     </div>
   </div>
 
-  <!-- Slide 6: Persistent Memory -->
-  <div class="slide slide-memory" data-index="5">
+  <!-- Slide 6: Architecture -->
+  <div class="slide slide-arch" data-index="5">
+    <div class="tag">Architecture</div>
+    <h2>How it's built</h2>
+    <div class="arch-diagram">
+
+      <div class="arch-col">
+        <div class="arch-col-header">Frontend</div>
+        <div class="arch-box"><span class="ab-icon">⚛️</span><div><strong>React + Vite</strong><br><span>Gallery, Explore, Chat, Guardian</span></div></div>
+        <div class="arch-box"><span class="ab-icon">📸</span><div><strong>Photo Upload</strong><br><span>Camera → Butterbase Storage</span></div></div>
+        <div class="arch-box"><span class="ab-icon">🔐</span><div><strong>Auth</strong><br><span>Signup/Login → personalized memory</span></div></div>
+        <div class="arch-box"><span class="ab-icon">🌐</span><div><strong>Deployed</strong><br><span>butterbase.dev CDN</span></div></div>
+      </div>
+
+      <div class="arch-connector">
+        <span>→</span>
+        <span class="conn-label">REST + WS</span>
+        <span>←</span>
+      </div>
+
+      <div class="arch-col">
+        <div class="arch-col-header">Butterbase Backend</div>
+        <div class="arch-box highlight"><span class="ab-icon">🤖</span><div><strong>AI Gateway</strong><br><span>Gemini 2.5 Flash — vision + chat</span></div></div>
+        <div class="arch-box highlight"><span class="ab-icon">🗃️</span><div><strong>PostgreSQL</strong><br><span>7 tables: landmarks, plans, visits, check-ins</span></div></div>
+        <div class="arch-box highlight"><span class="ab-icon">⚡</span><div><strong>KV Store</strong><br><span>Cache, counters, conversation memory</span></div></div>
+        <div class="arch-box highlight"><span class="ab-icon">📡</span><div><strong>Realtime WS</strong><br><span>Live safety alerts → guardian device</span></div></div>
+      </div>
+
+      <div class="arch-connector">
+        <span>→</span>
+        <span class="conn-label">Data Flow</span>
+        <span>←</span>
+      </div>
+
+      <div class="arch-col">
+        <div class="arch-col-header">Intelligence Layer</div>
+        <div class="arch-box"><span class="ab-icon">👁️</span><div><strong>Scene Analysis</strong><br><span>Photo → place ID, significance, safety</span></div></div>
+        <div class="arch-box"><span class="ab-icon">🧠</span><div><strong>Memory Engine</strong><br><span>Preferences, visits, conversations persist</span></div></div>
+        <div class="arch-box"><span class="ab-icon">🎯</span><div><strong>Personalization</strong><br><span>Extract prefs from chat → tailor responses</span></div></div>
+        <div class="arch-box"><span class="ab-icon">🛡️</span><div><strong>Safety Pipeline</strong><br><span>AI summary + GPS → guardian in real-time</span></div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Slide 7: Persistent Memory -->
+  <div class="slide slide-memory" data-index="6">
     <div class="tag">What Makes It Smart</div>
     <h2>3 layers of persistent memory</h2>
     <div class="memory-layers">
@@ -656,8 +788,8 @@
     </div>
   </div>
 
-  <!-- Slide 7: Live Demo -->
-  <div class="slide slide-demo" data-index="6">
+  <!-- Slide 8: Live Demo -->
+  <div class="slide slide-demo" data-index="7">
     <h2>Live Demo</h2>
     <p class="demo-url"><a href="https://travel-guardian.butterbase.dev" target="_blank">travel-guardian.butterbase.dev</a></p>
     <p class="demo-url" style="font-size:1.1rem; margin-top:-1rem;"><a href="https://github.com/abhijitbetigeri/travel-guardian" target="_blank">github.com/abhijitbetigeri/travel-guardian</a></p>
@@ -685,8 +817,8 @@
     </div>
   </div>
 
-  <!-- Slide 8: Closing -->
-  <div class="slide slide-cta" data-index="7">
+  <!-- Slide 9: Closing -->
+  <div class="slide slide-cta" data-index="8">
     <div class="logo">🛡️</div>
     <h2>TravelGuardian</h2>
     <p class="tagline">AI that sees where you are, remembers where you've been, and keeps your loved ones informed.</p>
@@ -714,7 +846,7 @@
 
 </div>
 
-<div class="counter" id="counter">1 / 8</div>
+<div class="counter" id="counter">1 / 9</div>
 <div class="nav-hint">← → arrow keys to navigate</div>
 
 <script>
